@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恐龙科普乐园</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/model.js"></script>
+</head>
+<body>
+    <!-- 添加开场动画容器 -->
+    <div class="intro-animation">
+        <div class="wave-background"></div>
+        <div class="particles-container"></div>
+        <div class="intro-text">恐龙世界</div>
+    </div>
+
+    <div class="background-animation"></div>
+    <div id="app" style="display: none;">  <!-- 初始隐藏主界面 -->
+        <nav class="nav-bar">
+            <div class="logo">恐龙科普乐园</div>
+            <div class="nav-links">
+                <button class="nav-btn active" data-section="carousel">恐龙图鉴</button>
+                <button class="nav-btn" data-section="game">恐龙游戏</button>
+                <button class="nav-btn" data-section="chat">恐龙问答</button>
+                <button class="music-btn" id="musicBtn">🎵</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <!-- 恐龙轮播图部分 -->
+            <section id="carousel" class="section active">
+                <div class="welcome-text">你好！欢迎来到恐龙乐园！</div>
+                <div class="dino-recommendation">
+                    恐龙信息推荐
+                </div>
+                <div class="carousel-container">
+                    <button class="carousel-btn prev">←</button>
+                    <div class="carousel-content">
+                        <div class="carousel-img-container">
+                            <img src="./images/Meraxes-CREDIT-Carlos-Papolio.avif" alt="恐龙" class="carousel-img" onerror="this.src='./images/Meraxes-CREDIT-Carlos-Papolio.avif'">
+                        </div>
+                        <div class="dino-info">
+                            <h2 class="dino-name"></h2>
+                            <p class="dino-desc"></p>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next">→</button>
+                </div>
+                <!-- 添加本周明星恐龙标题 -->
+                <div class="star-dino-title">本周明星恐龙</div>
+                <div class="model-container">
+                    <div id="3d-model"></div>
+                </div>
+                <div class="vr-container">
+                    <img src="images/vr.png" alt="VR" class="vr-image">
+                    <div class="vr-text">
+                        <div class="vr-text-line">更多体验</div>
+                        <div class="vr-text-line">请戴上设备</div>
+                        <div class="vr-text-line">登入游戏</div>
+                    </div>
+                </div>
+                <div class="dino-info-container">
+                    <h2 class="dino-title">No.1 异特龙</h2>
+                    <div class="dino-description">
+                        异特龙是最著名的大型肉食性恐龙之一，占据晚侏罗世陆地生态系统食物链的顶端，其模式种脆弱异特龙由20世纪伟大的美国古生物学家奥斯尼尔.马什于1877年描述命名。它们也是晚侏罗世发现化石数量最多，最广布的掠食者。
+                        <br><br>
+                        成年异特龙体长可达9米，有少数个体被认为可以达到12米。虽然不及霸王龙魁梧的体型，但异特龙的身体比例更为匀称，拥有更发达的前肢，显得更为矫健。
+                        <br><br>
+                        同时，异特龙的标本数量也要远多于霸王龙，使得它成为被古生物学家研究的最透彻的恐龙之一。由于发掘出的化石数量极为庞大，异特龙已成为莫里逊组的标志性化石物种。
+                    </div>
+                </div>
+            </section>
+
+            <!-- 游戏部分 -->
+            <section id="game" class="section">
+                <div class="game-container">
+                    <div class="game-content">
+                        <img src="images/对话.png" alt="恐龙对话" class="game-dialog-img">
+                        <a href="https://www.coze.cn/s/iUNwyAtK/" class="game-link" target="_blank">
+                            @https://www.coze.cn/s/iUNwyAtK/
+                        </a>
+                    </div>
+                </div>
+                <img src="images/标.png" alt="标志" class="bottom-logo">
+            </section>
+
+            <!-- 问答部分 -->
+            <section id="chat" class="section">
+                <div class="chat-container">
+                    <div class="chat-content">
+                        <img src="images/科普.png" alt="恐龙科普" class="chat-science-img">
+                        <a href="https://www.coze.cn/s/iUNK2nQw/" class="chat-link" target="_blank">
+                            @https://www.coze.cn/s/iUNK2nQw/
+                        </a>
+                    </div>
+                </div>
+                <img src="images/标.png" alt="标志" class="bottom-logo">
+            </section>
+        </main>
+    </div>
+    <audio id="bgMusic" loop>
+        <source src="图片和文字/卡片/music/2.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html> 
